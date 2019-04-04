@@ -51,7 +51,7 @@ Ext.define('Traccar.view.dialog.UserController', {
         this.lookupReference('tokenField').setValue(newToken);
     },
 
-    clearGoogleAuthKey: function() {
+    clearGoogleAuthKey: function () {
         this.lookupReference('googleAuthKeyField').setValue('');
         this.lookupReference('googleAuthKeyField').setDisabled(true);
     },
