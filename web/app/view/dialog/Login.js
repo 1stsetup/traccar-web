@@ -87,6 +87,15 @@ Ext.define('Traccar.view.dialog.Login', {
             },
             inputAttrTpl: ['autocomplete="on"']
         }, {
+            xtype: 'numberfield',
+            name: 'googleAuthCode',
+            reference: 'googleAuthCodeField',
+            fieldLabel: Strings.googleAuthCode,
+            allowBlank: true,
+            listeners: {
+                specialKey: 'onSpecialKey'
+            }
+        }, {
             xtype: 'checkboxfield',
             inputValue: true,
             uncheckedValue: false,

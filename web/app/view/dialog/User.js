@@ -174,6 +174,17 @@ Ext.define('Traccar.view.dialog.User', {
                         handler: 'generateToken'
                     }
                 }
+            }, {
+                xtype: 'textfield',
+                name: 'googleAuthKey',
+                reference: 'googleAuthKeyField',
+                fieldLabel: Strings.googleAuthKey,
+                triggers: {
+                    generate: {
+                        cls: 'iconCls: x-fa fa-refresh',
+                        handler: 'clearGoogleAuthKey'
+                    }
+                }
             }]
         }]
     },

@@ -32,6 +32,11 @@ Ext.define('Traccar.view.dialog.UserController', {
             this.lookupReference('deviceReadonlyField').setDisabled(false);
             this.lookupReference('limitCommandsField').setDisabled(false);
         }
+        if (!Traccar.app.getUser().get('administrator')) {
+            this.lookupReference('googleAuthKeyField').setDisabled(true);
+        }
+        this.lookupReference('googleAuthKeyField').setHidden(
+            !Traccar.app.getServer().get('googleAuthEnabled'));
     },
 
     symbols: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
@@ -44,6 +49,11 @@ Ext.define('Traccar.view.dialog.UserController', {
         }
 
         this.lookupReference('tokenField').setValue(newToken);
+    },
+
+    clearGoogleAuthKey: function() {
+        this.lookupReference('googleAuthKeyField').setValue('');
+        this.lookupReference('googleAuthKeyField').setDisabled(true);
     },
 
     testNotification: function () {

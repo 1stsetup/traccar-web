@@ -425,5 +425,7 @@
     "categoryTruck": "Truck",
     "categoryVan": "Van",
     "maintenanceStart": "Start",
-    "maintenancePeriod": "Period"
+    "maintenancePeriod": "Period",
+    "googleAuthKey": "Google Authentication Key:",
+    "googleAuthCode": "Google Authenticator Code:"
 }
