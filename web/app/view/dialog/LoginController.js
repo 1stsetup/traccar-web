@@ -27,8 +27,8 @@ Ext.define('Traccar.view.dialog.LoginController', {
         this.lookupReference('registerButton').setDisabled(
             !Traccar.app.getServer().get('registration'));
         this.lookupReference('languageField').setValue(Locale.language);
-        this.lookupReference('googleAuthCodeField').setHidden(
-            !Traccar.app.getServer().get('googleAuthEnabled'));
+        this.lookupReference('totpCodeField').setHidden(
+            !Traccar.app.getServer().get('totpEnabled'));
     },
 
     login: function () {

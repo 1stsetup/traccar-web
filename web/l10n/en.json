@@ -426,6 +426,8 @@
     "categoryVan": "Van",
     "maintenanceStart": "Start",
     "maintenancePeriod": "Period",
-    "googleAuthKey": "Google Authentication Key:",
-    "googleAuthCode": "Google Authenticator Code:"
+    "twofa": "2FA",
+    "useTotp": "Enable TOTP",
+    "totpKey": "TOTP Key:",
+    "totpCode": "Code:"
 }

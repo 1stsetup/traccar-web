@@ -32,11 +32,14 @@ Ext.define('Traccar.view.dialog.UserController', {
             this.lookupReference('deviceReadonlyField').setDisabled(false);
             this.lookupReference('limitCommandsField').setDisabled(false);
         }
-        if (!Traccar.app.getUser().get('administrator')) {
-            this.lookupReference('googleAuthKeyField').setDisabled(true);
-        }
-        this.lookupReference('googleAuthKeyField').setHidden(
-            !Traccar.app.getServer().get('googleAuthEnabled'));
+        
+        this.lookupReference('totpKeyField').setHidden(
+            !this.lookupReference('useTotpField').getValue());
+
+        this.lookupReference('useTotpField').setHidden(
+            !Traccar.app.getServer().get('totpEnabled'));
+        this.lookupReference('totpKeyField').setHidden(
+            !Traccar.app.getServer().get('totpEnabled'));
     },
 
     symbols: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
@@ -51,9 +54,13 @@ Ext.define('Traccar.view.dialog.UserController', {
         this.lookupReference('tokenField').setValue(newToken);
     },
 
-    clearGoogleAuthKey: function () {
-        this.lookupReference('googleAuthKeyField').setValue('');
-        this.lookupReference('googleAuthKeyField').setDisabled(true);
+    clearTotpKey: function () {
+        this.lookupReference('totpKeyField').setValue('');
+        this.lookupReference('totpKeyField').setDisabled(true);
+    },
+
+    useTotp: function(value) {
+        this.lookupReference('totpKeyField').setHidden(!this.lookupReference('useTotpField').getValue());
     },
 
     testNotification: function () {

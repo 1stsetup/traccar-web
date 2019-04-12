@@ -174,15 +174,29 @@ Ext.define('Traccar.view.dialog.User', {
                         handler: 'generateToken'
                     }
                 }
+            }]
+        }, {
+            xtype: 'fieldset',
+            title: Strings.twofa,
+            collapsible: true,
+            collapsed: true,
+            items: [{
+                xtype: 'checkboxfield',
+                inputValue: true,
+                uncheckedValue: false,
+                name: 'useTotp',
+                fieldLabel: Strings.useTotp,
+                reference: 'useTotpField',
+                handler: 'useTotp'
             }, {
-                xtype: 'textfield',
-                name: 'googleAuthKey',
-                reference: 'googleAuthKeyField',
-                fieldLabel: Strings.googleAuthKey,
+                xtype: 'displayfield',
+                name: 'totpKey',
+                reference: 'totpKeyField',
+                fieldLabel: Strings.totpKey,
                 triggers: {
                     generate: {
                         cls: 'iconCls: x-fa fa-refresh',
-                        handler: 'clearGoogleAuthKey'
+                        handler: 'clearTotpKey'
                     }
                 }
             }]

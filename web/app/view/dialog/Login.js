@@ -88,9 +88,9 @@ Ext.define('Traccar.view.dialog.Login', {
             inputAttrTpl: ['autocomplete="on"']
         }, {
             xtype: 'numberfield',
-            name: 'googleAuthCode',
-            reference: 'googleAuthCodeField',
-            fieldLabel: Strings.googleAuthCode,
+            name: 'code',
+            reference: 'totpCodeField',
+            fieldLabel: Strings.totpCode,
             allowBlank: true,
             listeners: {
                 specialKey: 'onSpecialKey'
